@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.SplitPane?>
+<BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="yersih.bayaanulquran.ui.students.StudentsController" stylesheets="@../styles/style.css">
+    <top>
+        <ToolBar styleClass="toolbar">
+            <items>
+                <Button fx:id="addStudentButton" onAction="#addStudent"
+                        styleClass="toolbarButton" text="Add Student"/>
+                <Button fx:id="editStudentButton" disable="true" onAction="#updateStudent"
+                        styleClass="toolbarButton" text="Edit Student Details"/>
+                <Button fx:id="deleteStudentButton" disable="true" onAction="#deleteStudentAlert"
+                        styleClass="toolbarButton" text="Delete Student"/>
+                <Separator orientation="VERTICAL"/>
+                <Button fx:id="receivePaymentButton" disable="true" onAction="#addPayment"
+                        styleClass="toolbarButton" text="Recieve Payment"/>
+                <Button fx:id="editPaymentButton" disable="true" onAction="#editPayment"
+                        styleClass="toolbarButton" text="Edit Payment"/>
+                <Button fx:id="deletePaymentButton" disable="true" onAction="#deletePayment"
+                        styleClass="toolbarButton" text="Delete Payment"/>
+                <!--<Button fx:id="printButton" text="Print" styleClass="toolbarButton" />-->
+            </items>
+        </ToolBar>
+    </top>
+    <left>
+
+    </left>
+
+    <center>
+        <SplitPane dividerPositions="0.30">
+            <VBox spacing="10">
+                <Label text="Students" textFill="#909090">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="searchStudentField" promptText="Search Student"/>
+                <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="No." fx:id="studentListIndexColumn"/>
+                        <TableColumn text="Index">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="studentIndex"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="studentFullName"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+                <padding>
+                    <Insets topRightBottomLeft="10"/>
+                </padding>
+            </VBox>
+
+            <VBox spacing="10">
+                <Label text="Personal Details" textFill="#909090">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <GridPane hgap="10.0" style="-fx-border-color: #909090;" vgap="10.0">
+                    <VBox GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
+                        <children>
+                            <Label text="Index" textFill="#909090">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="indexLabel">
+                                <font>
+                                    <Font size="18.0"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                    <VBox GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
+                        <children>
+                            <Label text="Name" textFill="#909090">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="nameLabel">
+                                <font>
+                                    <Font size="18.0"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                    <VBox GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
+                        <children>
+                            <Label text="National ID" textFill="#909090">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="nidLabel">
+                                <font>
+                                    <Font size="18.0"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                    <VBox GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                        <children>
+                            <Label text="Address" textFill="#909090">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="addressLabel">
+                                <font>
+                                    <Font size="18.0"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                    <VBox GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                        <children>
+                            <Label text="Phone" textFill="#909090">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="phoneLabel">
+                                <font>
+                                    <Font size="18.0"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                        <children>
+                            <Label text="Date Joined" textFill="#909090">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="joinDateLabel">
+                                <font>
+                                    <Font size="18.0"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </GridPane>
+
+                <HBox alignment="CENTER" spacing="10">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                            <Label text="Student Grade Details" textFill="#909090">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+
+                            <HBox spacing="10" style="-fx-border-color: #909090;">
+                                <VBox HBox.hgrow="ALWAYS">
+                                    <Label text="Enrolled Grades"/>
+                                    <TableView fx:id="coursesTable" HBox.hgrow="ALWAYS">
+                                        <columns>
+                                            <TableColumn text="Name">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="gradeName"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="Class Time">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="classTime"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="Monthly Fee" fx:id="courseFeeColumn">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="gradeFee"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="Start Date">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="gradeStartDate"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                        <columnResizePolicy>
+                                            <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY"/>
+                                        </columnResizePolicy>
+                                    </TableView>
+                                </VBox>
+
+                                <VBox HBox.hgrow="ALWAYS">
+                                    <Label text="Classes"/>
+                                    <TableView fx:id="attendanceTable">
+                                        <columns>
+                                            <TableColumn text="Date">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="classDateFormatted"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="Time">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="classDateTime"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="Lesson">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="classLesson"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn fx:id="attendanceColumn" text="Attendance">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="presenceText"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+                                </VBox>
+                                <padding>
+                                    <Insets topRightBottomLeft="10"/>
+                                </padding>
+                            </HBox>
+
+                        </VBox>
+
+
+                        <VBox HBox.hgrow="ALWAYS">
+                            <Label text="Payments" textFill="#909090">
+                                <font>
+                                    <Font size="16.0"/>
+                                </font>
+                            </Label>
+                            <TableView fx:id="paymentsTableView" prefWidth="300" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn text="Date">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="paymentDateFormatted"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn text="Time">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="paymentTimeFormatted"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn text="Amount">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="paymentAmount"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                                <columnResizePolicy>
+                                    <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY"/>
+                                </columnResizePolicy>
+                            </TableView>
+                        </VBox>
+                    </children>
+                </HBox>
+
+
+                <GridPane alignment="CENTER" hgap="10" vgap="10">
+                    <children>
+                        <VBox GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
+                            <children>
+                                <Label text="Total Fee" textFill="#909090">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="feeTotalLabel" text="00.0">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
+                            <children>
+                                <Label text="Fee Paid" textFill="#909090">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="feePaidLabel" text="00.0">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
+                            <children>
+                                <Label text="Remaining Fee" textFill="#909090">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="feeRemainingLabel" text="00.0">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+
+                    <padding>
+                        <Insets topRightBottomLeft="10"/>
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints/>
+                    </rowConstraints>
+                </GridPane>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                </padding>
+            </VBox>
+        </SplitPane>
+
+
+    </center>
+</BorderPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="yersih.bayaanulquran.ui.dialogs.attendance_dialogs.AttendanceDialogController">
+    <content>
+        <VBox>
+
+            <GridPane vgap="10" hgap="10">
+                <Label text="Course" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="courseComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200"/>
+                <Label text="Date" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="classDatePicker" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="200"/>
+                <Label text="Time" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <HBox GridPane.rowIndex="2" GridPane.columnIndex="1" spacing="10" prefWidth="200">
+                    <Spinner fx:id="hourSpinner"/>
+                    <Spinner fx:id="minuteSpinner"/>
+                    <Spinner fx:id="amPmSpinner"/>
+                </HBox>
+                <Label text="Lesson Description" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfLesson" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="200"/>
+                <padding>
+                    <Insets topRightBottomLeft="10"/>
+                </padding>
+            </GridPane>
+
+
+            <TableView fx:id="attendanceItemTableView" editable="true" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Student Index" editable="false">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="studentIndex"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Student Name" editable="false" fx:id="studentNameColumn">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="studentIndex"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="presenceTableColumn" text="Presence">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="presence"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+        </VBox>
+
+    </content>
+</DialogPane>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<BorderPane stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="yersih.bayaanulquran.ui.payments.PaymentsController"
+            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0">
+
+    <top>
+        <ToolBar styleClass="toolbar" GridPane.columnSpan="4">
+            <Button onAction="#addPayment" text="Add Payment">
+                <tooltip>
+                    <Tooltip text="Add Received Payment Details"/>
+                </tooltip>
+            </Button>
+            <Button onAction="#EditPayment" disable="true" text="Edit Payment">
+                <tooltip>
+                    <Tooltip text="Edit Received Payment Details"/>
+                </tooltip>
+            </Button>
+            <Button onAction="#deletePaymentAlert" disable="true" text="Delete Payment">
+                <tooltip>
+                    <Tooltip text="Delete Payment"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="feeCardsButton" onAction="#generateFeeCards" disable="true" text="Fee Cards">
+                <tooltip>
+                    <Tooltip text="Generate fee cards pdf"/>
+                </tooltip>
+            </Button>
+        </ToolBar>
+    </top>
+    <center>
+        <VBox spacing="10">
+            <Label text="Payments" textFill="#909090">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="searchPaymentField" promptText="Search Payment"/>
+            <TableView fx:id="paymentsTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Date">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="paymentDateFormatted"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Time">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="paymentTimeFormatted"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Student Index">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="paymentStudentIndex"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Student Name" fx:id="paymentStudentNameColumn">
+                        <!--<cellValueFactory>-->
+                            <!--<PropertyValueFactory property="paymentStudentName"/>-->
+                        <!--</cellValueFactory>-->
+                    </TableColumn>
+                    <TableColumn text="Paid Amount">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="paymentAmount"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+        </VBox>
+    </center>
+</BorderPane>

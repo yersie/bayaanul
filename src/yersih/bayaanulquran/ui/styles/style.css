@@ -1,0 +1,90 @@
+.parent {
+    -fx-background-color: #bfffe2;
+}
+
+
+#title {
+    -fx-padding: 0 0 0 10;
+    -fx-background-color: #005b2f;
+    -fx-text-fill: #fff;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+}
+
+.navSearch {
+    -fx-background-color: #56cb80;
+    -fx-padding: 10;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.navSearch .text-field {
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 8;
+    -fx-text-fill: #efefef;
+    -fx-prompt-text-fill: #4b4b4b;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+}
+
+.navButton {
+    -fx-background-color: #56cb80;
+    -fx-padding: 10;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.navButton .label {
+    -fx-padding: 0 0 0 10;
+    -fx-text-fill: #4b4b4b;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+}
+
+.navButton:hover {
+    -fx-background-color: #009a56;
+}
+
+.navHamburgerButton {
+    -fx-padding: 0 10 0 10;
+    -fx-background-radius: 8;
+    -fx-background-color: transparent;
+}
+
+.navHamburgerButton:hover {
+    -fx-background-color: #009a56;
+}
+
+.topBar {
+    -fx-background-image: url("../images/topbar.png");
+}
+
+.topBarButton {
+    -fx-background-color: #557755;
+}
+
+.topBarButton:hover {
+    -fx-background-color: #009a56;
+}
+
+.toolbarButton {
+    -fx-background-color: #81c784;
+}
+
+.toolbarButton: hover {
+    -fx-background-color: #009a56;
+}
+
+.table-column {
+    -fx-alignment: CENTER;
+}
+
+
+
+
+
+
+
+
+
