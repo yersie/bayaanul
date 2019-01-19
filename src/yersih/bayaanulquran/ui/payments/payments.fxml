@@ -12,22 +12,22 @@
 
     <top>
         <ToolBar styleClass="toolbar" GridPane.columnSpan="4">
-            <Button onAction="#addPayment" text="Add Payment">
+            <Button onAction="#addPayment" text="Add Payment" styleClass="toolbarButton">
                 <tooltip>
                     <Tooltip text="Add Received Payment Details"/>
                 </tooltip>
             </Button>
-            <Button onAction="#EditPayment" disable="true" text="Edit Payment">
+            <Button onAction="#EditPayment" disable="true" text="Edit Payment" styleClass="toolbarButton">
                 <tooltip>
                     <Tooltip text="Edit Received Payment Details"/>
                 </tooltip>
             </Button>
-            <Button onAction="#deletePaymentAlert" disable="true" text="Delete Payment">
+            <Button onAction="#deletePaymentAlert" disable="true" text="Delete Payment" styleClass="toolbarButton">
                 <tooltip>
                     <Tooltip text="Delete Payment"/>
                 </tooltip>
             </Button>
-            <Button fx:id="feeCardsButton" onAction="#generateFeeCards" disable="true" text="Fee Cards">
+            <Button fx:id="feeCardsButton" onAction="#generateFeeCards" disable="true" text="Fee Cards" styleClass="toolbarButton">
                 <tooltip>
                     <Tooltip text="Generate fee cards pdf"/>
                 </tooltip>
