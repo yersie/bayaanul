@@ -9,17 +9,17 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="yersih.bayaanulquran.ui.attendances.AttendanceController"
             AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" stylesheets="@../styles/style.css">
 
     <top>
         <HBox spacing="10">
             <ToolBar HBox.hgrow="ALWAYS">
                 <Label text="Grade"/>
-                <ComboBox fx:id="courseComboBox"/>
+                <ComboBox fx:id="courseComboBox" styleClass="toolbarButton"/>
                 <Label text="Starting Date"/>
-                <DatePicker fx:id="startDatePicker"/>
+                <DatePicker fx:id="startDatePicker" styleClass="toolbarButton"/>
                 <Label text="Ending Date"/>
-                <DatePicker fx:id="endDatePicker"/>
+                <DatePicker fx:id="endDatePicker" styleClass="toolbarButton"/>
                 <padding>
                     <Insets topRightBottomLeft="10"/>
                 </padding>
