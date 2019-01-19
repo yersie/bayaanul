@@ -15,7 +15,6 @@
 
 <AnchorPane fx:id="navigationPane" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/8.0.172-ea"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="yersih.bayaanulquran.ui.NavController">
-    <children>
         <AnchorPane prefHeight="48.0" styleClass="topBar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                     AnchorPane.topAnchor="0.0">
             <background>
@@ -46,7 +45,7 @@
                         <Insets right="10.0"/>
                     </HBox.margin>
                 </Button>
-                <Button styleClass="topBarButton" text="Save Database" textFill="WHITE"
+                <Button fx:id="saveDataButton" styleClass="topBarButton" text="Save Database" textFill="WHITE"
                         onAction="#saveData">
                     <font>
                         <Font size="18.0"/>
@@ -66,7 +65,6 @@
         <AnchorPane fx:id="drawerPane" style="-fx-background-color: #00e45f;" translateX="-250"
                     AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="48.0"
                     BorderPane.alignment="CENTER">
-            <children>
                 <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                       AnchorPane.topAnchor="0.0">
                     <HBox>
@@ -127,7 +125,6 @@
                         </VBox.margin>
                     </HBox>
                 </VBox>
-            </children>
         </AnchorPane>
         <Button onMouseClicked="#navHamburgerToggle" prefHeight="48" prefWidth="48" styleClass="navHamburgerButton"
                 AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0">
@@ -140,5 +137,4 @@
                 <Insets topRightBottomLeft="0"/>
             </padding>
         </Button>
-    </children>
 </AnchorPane>
