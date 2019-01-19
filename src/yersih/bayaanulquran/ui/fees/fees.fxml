@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -12,17 +9,15 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="yersih.bayaanulquran.ui.fees.FeesController" AnchorPane.bottomAnchor="0.0"
             AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-            AnchorPane.topAnchor="0.0">
+            AnchorPane.topAnchor="0.0" stylesheets="@../styles/style.css">
     <top>
         <ToolBar>
-            <items>
-                <ComboBox fx:id="monthComboBox"/>
-                <Button onAction="#printSheet" text="Print Sheet" styleClass="toolbarButton">
+                <ComboBox fx:id="monthComboBox" styleClass="toolbarButton"/>
+                <Button onAction="#printSheet" text="Print Sheet" styleClass="toolbarButton" >
                     <tooltip>
                         <Tooltip text="Add Grade"/>
                     </tooltip>
                 </Button>
-            </items>
         </ToolBar>
     </top>
 <center>
