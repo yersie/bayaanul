@@ -22,10 +22,10 @@ public class NavController {
     private AnchorPane navigationPane, opacityPane, drawerPane, mainWindow;
 
     @FXML
-    private Label userLabel,systemDateTime;
+    private Label userLabel;
 
     @FXML
-    private Button logoutButton;
+    private Button logoutButton,saveDataButton;
 
     private boolean isDrawerOpen;
 
@@ -125,7 +125,7 @@ public class NavController {
     @FXML
     public void saveData() {
         try {
-            new DropToBox().uploadDatabase();
+            new DropToBox().uploadDatabase(saveDataButton);
         } catch (Exception e) {
             e.printStackTrace();
             new ExceptionDialog().showExceptionDialog(e);
