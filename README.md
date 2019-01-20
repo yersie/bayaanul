@@ -16,5 +16,3 @@ Features:
 
 *Cloud
 -Save Database to DropBox (Runs on Seperate Thread)
-
-*Interactive UI
