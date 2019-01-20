@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="yersih.bayaanul.ui.fees.FeesController" AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0" stylesheets="@../styles/style.css">
+    <top>
+        <ToolBar>
+                <ComboBox fx:id="monthComboBox" styleClass="toolbarButton"/>
+                <Button onAction="#printSheet" text="Print Sheet" styleClass="toolbarButton" >
+                    <tooltip>
+                        <Tooltip text="Add Grade"/>
+                    </tooltip>
+                </Button>
+        </ToolBar>
+    </top>
+<center>
+    <VBox spacing="10">
+        <!--<Label text="Print Monthly Payments Sheet"/>-->
+        <TableView fx:id="feeSheetTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn text="No." fx:id="studentNumberColumn"/>
+
+                <TableColumn text="Student Index">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="studentIndex"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Student Name" fx:id="studentNameColumn">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="studentIndex"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Grades" fx:id="studentCoursesColumn">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="gradesString"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Monthly Total" fx:id="monthlyTotalColumn">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="enrolledCourseIdList"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <padding>
+            <Insets topRightBottomLeft="10"/>
+        </padding>
+    </VBox>
+</center>
+
+
+</BorderPane>

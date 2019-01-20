@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.TableView?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="yersih.bayaanul.ui.dialogs.student_fees.StudentsFeeFormController">
+    <content>
+        <TableView fx:id="feeTable">
+
+        </TableView>
+    </content>
+
+</DialogPane>

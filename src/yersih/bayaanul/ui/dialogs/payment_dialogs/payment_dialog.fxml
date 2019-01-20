@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<DialogPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="yersih.bayaanul.ui.dialogs.payment_dialogs.PaymentDialogController">
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <Label text="Paid By" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="comboStudents" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <TextField fx:id="searchStudentField" promptText="Search Student" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <Label text="Amount Paid" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfPaymentAmount" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Date Paid" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="dpPaymentDate" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label text="Time Paid" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <HBox GridPane.rowIndex="3" GridPane.columnIndex="1" spacing="10">
+                <Spinner fx:id="hourSpinner" prefWidth="60"/>
+                <Spinner fx:id="minuteSpinner" prefWidth="60"/>
+                <Spinner fx:id="amPmSpinner" prefWidth="60"/>
+            </HBox>
+        </GridPane>
+    </content>
+</DialogPane>

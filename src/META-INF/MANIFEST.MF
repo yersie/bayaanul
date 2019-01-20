@@ -2,5 +2,5 @@ Manifest-Version: 1.0
 Class-Path: io-7.1.4.jar kernel-7.1.4.jar layout-7.1.4.jar slf4j-api-1
  .7.13.jar jackson-core-2.7.4.jar sqlite-jdbc-3.23.1.jar dropbox-core-
  sdk-3.0.11.jar
-Main-Class: yersih.bayaanulquran.ui.Main
+Main-Class: yersih.bayaanul.ui.Main
 
